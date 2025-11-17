@@ -41,6 +41,7 @@
  *   - choose windows/MacOS as operating system and install mongosh.
  *   - After installation setup the environment variable path.
  *   - copy the connection string
+ *   mongosh "mongodb+srv://cluster0.6jo2qwi.mongodb.net/" --apiVersion 1 --username dee
  *   - open cmd and paste the connection string to establish connection with mongoDB cloud.
  *
  * ============================================
@@ -108,7 +109,7 @@
  *       Example connection string: mongodb+srv://mjwdmufti:<db_password>@cluster0.wwsbvm7.mongodb.net
  *  - write your database password in place of <db_password> in the connection string.
  *  - Run server: node server.js to test connection.
- * 
+ * mongodb+srv://dee:<De11223344@>@cluster0.6jo2qwi.mongodb.net/
  * =====================================================
  * TODO-2 Define the schema of the DB
  * ===================================================== 
@@ -170,8 +171,9 @@
 import mongoose from "mongoose";
 
 // establish connection
-
-
+mongoose.connect("mongodb+srv://dee:De11223344%40@cluster0.6jo2qwi.mongodb.net/mydb")
+    .then(() => console.log("Connected"))
+    .catch(err => console.log(err));
 // define schema
 
 
