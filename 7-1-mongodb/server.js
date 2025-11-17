@@ -175,10 +175,22 @@ mongoose.connect("mongodb+srv://dee:De11223344%40@cluster0.6jo2qwi.mongodb.net/m
     .then(() => console.log("Connected"))
     .catch(err => console.log(err));
 // define schema
-
+const studentSchema = new mongoose.Schema({
+    name: String,
+    age: Number,
+    major: String
+});
+const Student = mongoose.model("Student", studentSchema);
 
 // create document
-
+async function createStudents() {
+    await Student.insertMany([
+        { name: "Ali", age: 21, major: "CS" },
+        { name: "Sara", age: 23, major: "SE" }
+    ]);
+    console.log("✅ Inserted");
+}
+createStudents();
 
 // read document
 
